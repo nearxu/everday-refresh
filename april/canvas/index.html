@@ -1,0 +1,18 @@
+<html>
+
+<body>
+    <canvas id="app" style="border:1px solid #ddd;display:block;margin:20px auto;"></canvas>
+</body>
+<script>
+    var mycanvas = document.getElementById('app');
+    mycanvas.width = '200';
+    mycanvas.height = '200';
+    var cxt = mycanvas.getContext('2d');
+    //空心圆
+    cxt.beginPath()
+    cxt.arc(250, 150, 100, 0, Math.PI * 2);
+    cxt.closePath();
+    cxt.stroke();
+</script>
+
+</html>
