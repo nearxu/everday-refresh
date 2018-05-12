@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="react-log"></div>
+
+    <script src="https://cdn.jsdelivr.net/g/react@15.4.0-rc.3(react.min.js+react-dom.min.js),lodash@4.16.4"></script>
+    <script src="https://unpkg.com/mobx@2.6.0/lib/mobx.umd.min.js"></script>
+    <script src="https://unpkg.com/mobx-react@3.5.8/index.js"></script>
+    <script src="https://rawgit.com/mattruby/mobx-examples/master/logging-utils.js"></script>
+    <script>
+        wrapConsole();
+    </script>
+    <script>
+        // 定义模型
+        var data = {
+            firstName: 'guo',
+            lastName: 'yongfeng',
+            age: 10,
+            get fullName() {
+                console.count('fullName');
+                return this.firstName + ' ' + this.lastName;
+            }
+        }
+
+        // 绑定观察
+        var person = mobx.observable(data);
+
+        // autorun 方法用于自动监听执行
+        mobx.autorun(function () {
+            console.log('autorun: ' + person.fullName + ' ' + person.age);
+        });
+
+        // 修改person的firstName字段
+        // autorun 中的方法监听到person的相关字段变更后会自动执行
+        person.firstName = 'iuap';
+        person.firstName = 'design';
+    </script>
+
+
+</body>
+
+</html>
