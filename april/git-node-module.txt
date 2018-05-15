@@ -1,0 +1,6 @@
+在根目录上添加gitignore
+
+
+
+.DS_Store
+node_modules
