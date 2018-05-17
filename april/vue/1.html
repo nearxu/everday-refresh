@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>chapter01</title>
+    <style>
+        #list-item {
+            color: red;
+        }
+    </style>
+    <script src="./assets/vue.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <p>{{filterMsg | upper}}</p>
+        <p v-bind:title='message'>鼠标悬停</p>
+        <p v-if='active'>if active true</p>
+        <p else>active false</p>
+        <p @click='reverMsg'>翻转 {{msg}}</p>
+        <p>我是计算改变的值{{computedValue}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                active: false,
+                msg: 'hello vue',
+                filterMsg: 'abcd',
+                message: `页面时间${new Date().toLocaleString()}`
+            },
+
+            filters: {
+                upper(value) {
+                    if (!value) {
+                        return '';
+                    }
+                    return value.toUpperCase();
+
+                }
+            },
+            methods: {
+                reverMsg() {
+                    this.msg = this.msg.split('').reverse().join('')
+                }
+            },
+            computed: {
+                computedValue() {
+                    return this.msg.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

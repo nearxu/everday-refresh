@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>chapter01</title>
+    <script src="./assets/vue.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <cc no-msg='hello props'></cc>
+        <xx></xx>
+        <aa></aa>
+    </div>
+    <script>
+        Vue.component('aa', {
+            template: '<button @click="count+=1">{{count}}</button>',
+            data() {
+                return {
+                    count: 0
+                }
+            }
+        })
+        var Child = {
+            template: '<div>hello children</div>'
+        };
+        Vue.component('cc', {
+            props: ['noMsg'],
+            template: '<div>{{noMsg}}</div>'
+        })
+        new Vue({
+            el: '#app',
+            components: {
+                'xx': Child
+            }
+        })
+    </script>
+</body>
+
+</html>

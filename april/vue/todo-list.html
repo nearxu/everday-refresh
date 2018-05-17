@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>to do list</title>
+    <script src="assets/vue.js"></script>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <h1>列表渲染</h1>
+    <div id="app">
+        <p>
+            <input type="text" v-model='newText' v-on:keyup.enter='add' placeholder="add new text">
+        </p>
+        <div>
+            <ul>
+                <li v-for='(todo,index) in todos'>
+                    <span>{{todo}}</span>
+                    <button @click='deleteTodo(index)'>delete</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                newText: '',
+                todos: [
+                    'Do the dishes',
+                    'Take out the trash',
+                    'Mow the lawn'
+                ]
+            },
+            methods: {
+                add() {
+                    this.todos.push(this.newText);
+                    this.newText = '';
+                },
+
+                deleteTodo(i) {
+                    this.todos.splice(i, 1);
+                    console.log(i, this.todos);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>chapter01</title>
+    <style>
+        .active {
+            color: red;
+        }
+
+        .danger {
+            text-decoration: line-through;
+        }
+    </style>
+    <script src="./assets/vue.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <p v-bind:class='{active:isTrue}'>istrue is active red</p>
+        <p>
+            <button v-on:click='count+=1'>{{count}}</button>
+        </p>
+        <p>
+            <input type='checkbox' value='tom' v-model='checkedName' />
+            <label for='tom'>tom</label>
+            <span>{{checkedName}}</span>
+        </p>
+        <select v-model='cc'>
+            <option v-bind:value='option.value' v-for='option in options'>{{option.text}}</option>
+        </select>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isTrue: true,
+                count: 0,
+                pick: '',
+                checkedName: [],
+                cc: 'A',
+                options: [
+                    { text: 'one', value: 'A' },
+                    { text: 'two', value: 'B' },
+                    { text: 'three', value: 'C' }
+                ],
+            }
+        })
+    </script>
+</body>
+
+</html>
