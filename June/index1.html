@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+    <title>2048</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="gameContainer">
+            <div class="score">
+                Score:
+                <span>0</span>
+            </div>
+
+            <div class="game">
+
+            </div>
+        </div>
+    </div>
+
+
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        @keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+                z-index: 5;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5
+            }
+
+            100% {
+                transform: scale(1);
+                z-index: 2;
+                opacity: 1;
+            }
+        }
+
+        .bounce-in {
+            animation: bounce-in;
+            animation-duration: 0.15s;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapper .score {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            font-size: 32px;
+            color: #477196;
+            text-transform: uppercase;
+        }
+
+        .game {
+            background: rgb(90, 75, 70);
+            border-radius: 5px;
+            position: relative;
+            font-weight: 600;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .game .grid-line,
+        .game .cell {
+            position: absolute;
+        }
+
+        .game .grid-line {
+            border: solid 1px rgba(255, 214, 200, 0.2);
+            z-index: 1;
+        }
+
+        .game .cell {
+            z-index: 2;
+            background: rgb(255, 238, 217);
+            border-radius: 5px;
+            display: flex;
+            transition: top 0.15s linear, left 0.15s linear, background 0.15s linear;
+        }
+
+        .game .cell.new {
+            background: rgb(243, 255, 234);
+        }
+
+        .game .cell span {
+            margin: auto;
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+            color: #a06060;
+        }
+    </style>
+    <script src="./js/jquery.min.js"></script>
+    <script src="core/app.js"></script>
+</body>
+
+</html>

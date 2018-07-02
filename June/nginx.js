@@ -1,3 +1,6 @@
+// nginx 教程
+// https://github.com/jaywcjlove/nginx-tutorial
+
 jsonp 跨域
 document.domain + iframe 跨域
 location.hash + iframe 跨域
