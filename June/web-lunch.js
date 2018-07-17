@@ -12,7 +12,7 @@ pm2 delete all
 
 pm2 start scripts/start.js --name football-news
 
-cd /ect/nginx/conf.d
+cd /etc/nginx/conf.d
 
 ll
 
