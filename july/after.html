@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .box-container {
+            position: relative;
+            width: 100px;
+            color: #777;
+        }
+
+        .border-top {
+            background: #b4bcbf;
+            padding: 15px;
+        }
+
+        .border-top:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 50%;
+            transform: translateX(50%);
+            background-color: #8796a9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-container">
+        <div class="border-top">border top</div>
+    </div>
+</body>
+
+</html>
