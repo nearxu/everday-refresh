@@ -1,0 +1,14 @@
+input{
+    -webkit-appearance: none;
+    }
+
+    //ios端关于时间的兼容性问题
+
+    new Date(time).getTime() 
+
+    2018-03-05 00:00:02 如果time是这种格式，
+    需要把“-”转换成 “/” str.replace(/-/g,"/")
+
+
+    // 防止手机中网页放大和缩小
+    <meta name="viewport"content="user-scalable=0"/>
