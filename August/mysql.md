@@ -1,7 +1,10 @@
-// mysql 基础知识第一天
+## mysql 基础知识第一天
+
 知识总结相关文章
-// https://segmentfault.com/a/1190000006876419
-// http://www.runoob.com/mysql/mysql-administration.html
+
+# https://segmentfault.com/a/1190000006876419
+
+# http://www.runoob.com/mysql/mysql-administration.html
 
 启动：
 
