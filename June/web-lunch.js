@@ -11,6 +11,7 @@ pm2 stop all
 pm2 delete all
 
 pm2 start scripts/start.js --name football-news
+pm2 start npm --name api -- run start
 
 cd /etc/nginx/conf.d
 
